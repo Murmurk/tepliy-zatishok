@@ -419,11 +419,12 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
 
 /* ── success overlay ── */
 .success-overlay {
-  display: none; position: fixed; inset: 0; z-index: 200;
+  position: fixed; inset: 0; z-index: 200;
   background: rgba(0,0,0,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  align-items: center; justify-content: center; padding: 20px;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; pointer-events: none; transition: opacity .4s ease;
 }
-.success-overlay.open { display: flex; }
+.success-overlay.open { opacity: 1; pointer-events: auto; }
 .success-card {
   background: var(--surface); border-radius: var(--r-card); padding: clamp(32px,6vw,56px) clamp(24px,5vw,48px);
   width: 100%; max-width: 480px; text-align: center;
@@ -677,7 +678,7 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
     <h2>Замовлення прийнято!</h2>
     <p>Дякуємо за ваше замовлення.</p>
     <div class="success-details" id="successDetails"></div>
-    <p>Менеджер зателефонує для підтвердження.</p>
+    <p id="successMsg"></p>
     <button class="btn-close-success" id="successClose" type="button">Повернутися на сайт</button>
   </div>
 </div>
@@ -1074,14 +1075,20 @@ function handleSubmit(form, statusId, prefix) {
         mode: "no-cors"
       });
       form.reset();
+      statusEl.hidden = true;
       closeModal();
       var details = document.getElementById("successDetails");
       details.innerHTML = "<b>" + order.color + "</b> · " + order.size + "<br>"
         + order.name + " · " + order.phone + "<br>"
         + order.city + (order.warehouse ? "<br>" + order.warehouse : "");
+      var successMsg = document.getElementById("successMsg");
+      successMsg.textContent = order.noCall
+        ? "Замовлення відправлено Новою Поштою без дзвінка. Очікуйте SMS з номером накладної."
+        : "Менеджер зателефонує для підтвердження замовлення.";
       var so = document.getElementById("successOverlay");
       so.classList.add("open");
       document.body.style.overflow = "hidden";
+      setTimeout(function() { so.classList.remove("open"); document.body.style.overflow = ""; }, 8000);
     } catch (err) {
       showStatus("warn", "Не вдалося надіслати заявку. Спробуйте ще раз за хвилину.");
     } finally { btn.disabled = false; }
