@@ -1052,13 +1052,15 @@ function handleSubmit(form, statusId, prefix) {
 
     var name = nameInp.value.trim();
     var digits = phoneInp.value.replace(/\D/g, "");
+    fieldError(sizeSel, sizeErr, ""); fieldError(nameInp, nameErr, ""); fieldError(phoneInp, phoneErr, "");
+    if (cityInp) fieldError(cityInp, cityErr, ""); if (whInp) fieldError(whInp, whErr, "");
     var bad = null;
     if (!sizeSel.value) { fieldError(sizeSel, sizeErr, "Оберіть розмір"); bad = bad || sizeSel; }
     if (name.length < 2) { fieldError(nameInp, nameErr, "Вкажіть ім'я"); bad = bad || nameInp; }
     if (digits.length !== 12 || digits.slice(0,3) !== "380") { fieldError(phoneInp, phoneErr, "Вкажіть номер +380 XX XXX XX XX"); bad = bad || phoneInp; }
     if (cityInp && cityInp.value.trim().length < 2) { fieldError(cityInp, cityErr, "Вкажіть місто"); bad = bad || cityInp; }
     if (whInp && !whInp.disabled && whInp.value.trim().length < 2) { fieldError(whInp, whErr, "Вкажіть відділення"); bad = bad || whInp; }
-    if (bad) { bad.focus(); return; }
+    if (bad) { bad.scrollIntoView({ behavior: "smooth", block: "center" }); bad.focus(); return; }
 
     var statusEl = document.getElementById(statusId);
     function showStatus(kind, text) { statusEl.hidden = false; statusEl.className = "status " + kind; statusEl.textContent = text; }
@@ -1077,7 +1079,10 @@ function handleSubmit(form, statusId, prefix) {
     };
 
     var btn = form.querySelector('button[type="submit"]');
+    var btnText = btn.textContent;
     btn.disabled = true;
+    btn.textContent = "Відправляємо...";
+    btn.style.opacity = "0.7";
     try {
       await fetch(CONFIG.ORDER_URL, {
         method: "POST",
@@ -1103,7 +1108,7 @@ function handleSubmit(form, statusId, prefix) {
       setTimeout(function() { so.classList.remove("open"); document.body.style.overflow = ""; }, 8000);
     } catch (err) {
       showStatus("warn", "Не вдалося надіслати заявку. Спробуйте ще раз за хвилину.");
-    } finally { btn.disabled = false; }
+    } finally { btn.disabled = false; btn.textContent = btnText; btn.style.opacity = ""; }
   });
 }
 
