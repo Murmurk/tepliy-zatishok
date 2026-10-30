@@ -623,6 +623,7 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
           <div class="fld ac-wrap"><label for="fiCity">Місто</label><input id="fiCity" name="city" type="text" autocomplete="off" placeholder="Почніть вводити місто" required aria-describedby="eiCity"><span class="ac-spin" id="fiCitySpin"></span><ul class="ac-list" id="fiCityList"></ul><span class="err" id="eiCity"></span></div>
           <div class="fld ac-wrap"><label for="fiWh">Відділення Нової Пошти</label><input id="fiWh" name="warehouse" type="text" autocomplete="off" placeholder="Оберіть місто, потім відділення" required aria-describedby="eiWh" disabled><span class="ac-spin" id="fiWhSpin"></span><ul class="ac-list" id="fiWhList"></ul><span class="err" id="eiWh"></span></div>
           <label class="check-row"><input type="checkbox" id="fiNoCall" name="noCall"><span>Замовити без дзвінка менеджера</span></label>
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <button class="btn" type="submit">Замовити</button>
           <div class="status" id="statusInline" role="status" hidden></div>
           <div class="trust"><span>Доставка Новою Поштою</span><span>Оплата після огляду</span></div>
@@ -664,6 +665,7 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
       <div class="fld ac-wrap"><label for="fmCity">Місто</label><input id="fmCity" name="city" type="text" autocomplete="off" placeholder="Почніть вводити місто" required aria-describedby="emCity"><span class="ac-spin" id="fmCitySpin"></span><ul class="ac-list" id="fmCityList"></ul><span class="err" id="emCity"></span></div>
       <div class="fld ac-wrap"><label for="fmWh">Відділення НП</label><input id="fmWh" name="warehouse" type="text" autocomplete="off" placeholder="Оберіть місто, потім відділення" required aria-describedby="emWh" disabled><span class="ac-spin" id="fmWhSpin"></span><ul class="ac-list" id="fmWhList"></ul><span class="err" id="emWh"></span></div>
       <label class="check-row"><input type="checkbox" id="fmNoCall" name="noCall"><span>Замовити без дзвінка менеджера</span></label>
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
       <button class="btn" type="submit">Замовити зі знижкою</button>
       <div class="status" id="statusModal" role="status" hidden></div>
       <div class="trust"><span>Нова Пошта</span><span>Оплата після огляду</span></div>
@@ -1018,9 +1020,18 @@ initNpAutocomplete("fiCity", "fiCityList", "fiCitySpin", "fiWh", "fiWhList", "fi
 initNpAutocomplete("fmCity", "fmCityList", "fmCitySpin", "fmWh", "fmWhList", "fmWhSpin");
 
 /* ── form submission ── */
+var lastOrderTime = 0;
 function handleSubmit(form, statusId, prefix) {
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
+    var hp = form.querySelector('input[name="website"]');
+    if (hp && hp.value) return;
+    var now = Date.now();
+    if (now - lastOrderTime < 30000) {
+      var statusEl = document.getElementById(statusId);
+      statusEl.hidden = false; statusEl.className = "status warn"; statusEl.textContent = "Зачекайте 30 секунд перед наступним замовленням.";
+      return;
+    }
     var colorSel = form.querySelector('select[name="color"]');
     var sizeSel = form.querySelector('select[name="size"]');
     var nameInp = form.querySelector('input[name="name"]');
@@ -1074,6 +1085,7 @@ function handleSubmit(form, statusId, prefix) {
         body: JSON.stringify(order),
         mode: "no-cors"
       });
+      lastOrderTime = Date.now();
       form.reset();
       statusEl.hidden = true;
       closeModal();
