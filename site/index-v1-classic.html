@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Теплий Затишок — Флісовий костюм</title>
+<meta name="description" content="Теплий флісовий костюм «Теплий Затишок» — якісний турецький фліс, розміри 50–60. Доставка Новою Поштою, оплата після огляду.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --ink: #1C1917;
+  --muted: #78716C;
+  --subtle: #A8A29E;
+  --line: #E7E5E4;
+  --accent: #B3112A;
+  --accent-hover: #9A0E24;
+  --accent-ink: #fff;
+  --sel: #B3112A;
+  --glass: rgba(255,255,255,0.68);
+  --glass-border: rgba(0,0,0,0.06);
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.07);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.10);
+  --r-card: 20px;
+  --r-input: 14px;
+  --r-pill: 999px;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C0A09; --surface: #1C1917; --ink: #FAFAF9; --muted: #A8A29E; --subtle: #78716C;
+    --line: #292524; --accent: #E11D48; --accent-hover: #F43F5E;
+    --glass: rgba(28,25,23,0.72); --glass-border: rgba(255,255,255,0.07);
+    --shadow-xs: 0 1px 2px rgba(0,0,0,0.3); --shadow-sm: 0 2px 8px rgba(0,0,0,0.35);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.4); --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C0A09; --surface: #1C1917; --ink: #FAFAF9; --muted: #A8A29E; --subtle: #78716C;
+  --line: #292524; --accent: #E11D48; --accent-hover: #F43F5E;
+  --glass: rgba(28,25,23,0.72); --glass-border: rgba(255,255,255,0.07);
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.3); --shadow-sm: 0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.4); --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased; margin: 0; padding: 0;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 50; background: var(--bg); }
+img { display: block; max-width: 100%; height: auto; }
+h1,h2,h3,p { margin: 0; }
+h1,h2,h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: 1200px; margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+section[id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 80px); }
+.eyebrow { font: 600 11.5px/1 var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 0 32px; border: 0; border-radius: var(--r-pill); cursor: pointer;
+  background: var(--accent); color: var(--accent-ink);
+  font: 600 15px/1 var(--font-body); letter-spacing: 0.02em; text-decoration: none;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 28%, transparent);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 38%, transparent); }
+.btn:active { transform: none; box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 18%, transparent); }
+.btn.sm { min-height: 42px; padding: 0 22px; font-size: 13px; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  background: var(--glass); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom: 1px solid var(--glass-border);
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; }
+.brand { font: 600 19px/1 var(--font-display); letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; }
+.brand small { font: 600 10px/1 var(--font-body); letter-spacing: 0.12em; color: var(--accent); margin-left: 8px; text-transform: uppercase; vertical-align: middle; }
+.nav { display: flex; gap: 24px; margin-left: auto; font-size: 14px; font-weight: 500; }
+.nav a { text-decoration: none; color: var(--muted); transition: color .15s; }
+.nav a:hover { color: var(--ink); }
+.top .btn { margin-left: 0; }
+
+/* hero */
+.hero {
+  background:
+    radial-gradient(ellipse 110% 60% at 12% -10%, color-mix(in srgb, var(--sel) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 88% 110%, color-mix(in srgb, var(--sel) 10%, transparent), transparent 60%),
+    var(--bg);
+  transition: background .5s ease;
+  padding-block: 32px 72px;
+}
+.hero-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: clamp(32px,5vw,80px); align-items: start; }
+
+/* gallery */
+.gallery { display: grid; grid-template-columns: 80px minmax(0,1fr); gap: 14px; align-items: start; }
+.thumbs { display: grid; gap: 10px; }
+.thumb { padding: 0; border: 2px solid transparent; border-radius: 12px; overflow: hidden; background: var(--surface); cursor: pointer; opacity: .6; transition: opacity .2s, border-color .2s, transform .2s; }
+.thumb[aria-current="true"] { border-color: var(--ink); opacity: 1; }
+.thumb:hover { opacity: 1; transform: scale(1.06); }
+.thumb img { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+.stage { position: relative; border-radius: var(--r-card); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-lg); }
+.stage img { width: 100%; aspect-ratio: 2/3; object-fit: cover; transition: opacity .22s ease; }
+.stage img.fade { opacity: 0; }
+.arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%;
+  border: 0; cursor: pointer; background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  color: var(--ink); display: grid; place-items: center; box-shadow: var(--shadow-sm);
+  transition: background .2s, transform .2s;
+}
+.arrow:hover { background: var(--surface); transform: translateY(-50%) scale(1.08); }
+.arrow.prev { left: 12px; } .arrow.next { right: 12px; }
+.arrow svg { width: 20px; height: 20px; }
+.stage-tag {
+  position: absolute; left: 14px; bottom: 14px; padding: 6px 14px; border-radius: var(--r-pill);
+  font: 500 13px/1 var(--font-body); letter-spacing: .02em;
+  background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+
+/* buy panel */
+.buy {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px);
+  background: var(--glass); backdrop-filter: blur(28px) saturate(1.2); -webkit-backdrop-filter: blur(28px) saturate(1.2);
+  border: 1px solid var(--glass-border); border-radius: var(--r-card); padding: 36px;
+  box-shadow: var(--shadow-md); display: grid; gap: 24px;
+}
+.buy h1 { font-size: clamp(30px,3.8vw,48px); font-weight: 700; }
+.buy .lead { color: var(--muted); max-width: 44ch; font-size: 15px; line-height: 1.6; }
+.price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; }
+.price { font: 800 clamp(40px,5vw,58px)/1 var(--font-body); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.price small { font-size: .36em; font-weight: 600; margin-left: 4px; }
+.old { color: var(--muted); text-decoration: line-through; font-size: 18px; font-variant-numeric: tabular-nums; }
+.save {
+  display: inline-flex; align-items: center;
+  background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent);
+  font: 600 13px/1 var(--font-body); padding: 6px 12px; border-radius: var(--r-pill);
+}
+
+/* timer */
+.timer { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; }
+.timer .lbl { font-size: 14px; color: var(--muted); font-weight: 500; }
+.clock { display: flex; gap: 8px; }
+.clock div {
+  min-width: 64px; text-align: center; padding: 10px 8px 8px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+}
+.clock b { display: block; font: 700 24px/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.clock span { font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+
+/* selectors */
+.field-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.field-label em { font-style: normal; color: var(--muted); font-weight: 400; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { position: relative; cursor: pointer; }
+.sw input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.sw span { display: block; width: 48px; height: 48px; border-radius: 50%; background: var(--c); border: 2px solid rgba(0,0,0,.07); box-shadow: 0 0 0 3px var(--bg); transition: box-shadow .2s, transform .2s; }
+.sw input:checked + span { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5.5px var(--ink); transform: scale(1.08); }
+.sw input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip span { display: block; padding: 12px 22px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--surface); font-weight: 500; font-variant-numeric: tabular-nums; transition: all .2s ease; }
+.chip span:hover { border-color: var(--muted); }
+.chip input:checked + span { background: var(--ink); color: var(--bg); border-color: var(--ink); box-shadow: var(--shadow-sm); }
+.chip input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* facts */
+.facts {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+  padding: 20px 24px; background: var(--surface); border-radius: 16px; border: 1px solid var(--line);
+}
+.facts div { display: flex; flex-direction: column; gap: 6px; padding: 0 16px; font-size: 13px; color: var(--muted); }
+.facts div:not(:last-child) { border-right: 1px solid var(--line); }
+.facts svg { color: var(--accent); flex-shrink: 0; }
+.facts b { color: var(--ink); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+/* sections */
+.sec { padding-block: clamp(64px,9vw,120px); }
+.sec-head { display: grid; gap: 14px; margin-bottom: 48px; max-width: 700px; }
+.sec-head h2 { font-size: clamp(30px,3.6vw,46px); font-weight: 600; }
+.sec-head p { color: var(--muted); font-size: 16px; }
+
+/* features */
+.fit { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(36px,7vw,100px); align-items: start; }
+.fit-photo { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 88px); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-lg); }
+.fit-photo img { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+.points { list-style: none; margin: 0; padding: 0; display: grid; }
+.points li { display: grid; gap: 8px; padding-block: 24px; border-top: 1px solid var(--line); }
+.points li:last-child { border-bottom: 1px solid var(--line); }
+.points h3 { font-size: 20px; font-weight: 600; line-height: 1.2; }
+.points p { color: var(--muted); max-width: 56ch; }
+.closing { margin-top: 32px; font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(19px,2.2vw,24px); line-height: 1.35; max-width: 32ch; color: var(--muted); }
+
+/* table */
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--surface); box-shadow: var(--shadow-sm); }
+table { width: 100%; border-collapse: collapse; min-width: 520px; font-variant-numeric: tabular-nums; }
+th, td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+thead th { font-weight: 700; font-size: 14px; }
+th[scope="row"] { font-weight: 400; }
+td, thead th:not(:first-child) { text-align: right; }
+tr.group th { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); color: var(--accent); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; text-align: left; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+.is-sel { background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 600; }
+.note { margin-top: 20px; color: var(--muted); font-size: 14px; max-width: 70ch; display: grid; gap: 4px; }
+
+/* reviews */
+.chats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,300px),1fr)); gap: 20px; align-items: start; }
+.chats figure { margin: 0; border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease; }
+.chats figure:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.chats img { width: 100%; }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 32px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 16px; align-content: start; }
+.steps li::before {
+  content: counter(s); font: 700 18px/1 var(--font-display);
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--ink); color: var(--bg); box-shadow: var(--shadow-sm);
+}
+.steps p { font-weight: 500; font-size: 15px; max-width: 24ch; line-height: 1.5; }
+
+/* order */
+.order { background: var(--surface); border-block: 1px solid var(--line); }
+.order-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(36px,7vw,88px); align-items: center; }
+.sum { display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 24px; align-items: center; }
+.sum img { border-radius: 16px; aspect-ratio: 2/3; object-fit: cover; width: 100%; box-shadow: var(--shadow-md); }
+.sum h3 { font-size: 21px; margin-bottom: 10px; }
+.sum dl { margin: 0; display: grid; gap: 6px; font-size: 15px; color: var(--muted); }
+.sum dl div { display: flex; gap: 8px; }
+.sum dt { min-width: 64px; }
+.sum dd { margin: 0; color: var(--ink); font-weight: 500; }
+.sum .total { margin-top: 14px; font: 800 28px var(--font-body); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.form { display: grid; gap: 18px; }
+.form h2 { font-size: clamp(28px,3.4vw,42px); }
+.form .sub { color: var(--muted); margin-top: -6px; font-size: 15px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+.fld { display: grid; gap: 6px; min-width: 0; }
+.fld label { font-size: 14px; font-weight: 600; }
+.fld input, .fld select {
+  width: 100%; min-height: 52px; padding: 0 18px; border-radius: var(--r-input);
+  border: 1.5px solid var(--line); background: var(--bg); transition: border-color .2s, box-shadow .2s;
+}
+.fld input:focus, .fld select:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent); }
+.fld input[aria-invalid="true"], .fld select[aria-invalid="true"] { border-color: var(--accent); }
+.err { color: var(--accent); font-size: 13px; min-height: 0; }
+.form .btn { min-height: 56px; width: 100%; font-size: 15px; margin-top: 4px; }
+.status { font-size: 14px; padding: 16px 18px; border-radius: var(--r-input); border: 1px solid var(--line); background: var(--bg); line-height: 1.5; }
+.status.ok { border-color: #2f8f5b; background: color-mix(in srgb, #2f8f5b 6%, var(--bg)); }
+.status.warn { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, var(--bg)); }
+.trust { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; color: var(--muted); font-weight: 500; }
+
+/* footer */
+footer { padding-block: 56px calc(56px + env(safe-area-inset-bottom, 0px)); }
+.foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
+.foot h2 { font-size: 24px; }
+.social { display: flex; gap: 10px; }
+.social a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border: 1px solid var(--line); border-radius: var(--r-pill);
+  text-decoration: none; font-weight: 500; font-size: 14px; background: var(--surface);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.social a:hover { border-color: var(--ink); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.social a svg { width: 18px; height: 18px; flex-shrink: 0; }
+.legal { width: 100%; color: var(--muted); font-size: 13px; }
+
+/* sticky cta */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: none;
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background: var(--glass); backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border-top: 1px solid var(--glass-border); align-items: center; justify-content: space-between; gap: 14px;
+  transform: translateY(110%); transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+.sticky-cta.show { transform: none; }
+.sticky-cta .p { font: 800 24px var(--font-body); letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.sticky-cta .p s { display: block; font: 400 13px var(--font-body); color: var(--muted); }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero-grid, .fit, .order-grid { grid-template-columns: 1fr; }
+  .buy { position: static; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border: 0; padding: 0; box-shadow: none; }
+  .fit-photo { position: static; max-width: 420px; }
+  .nav { display: none; }
+  .top .btn { margin-left: auto; }
+  .gallery { grid-template-columns: 1fr; }
+  .thumbs { grid-template-columns: repeat(3, 76px); order: 2; }
+  .sticky-cta { display: flex; }
+  footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+  .facts { grid-template-columns: 1fr; padding: 16px 20px; }
+  .facts div { padding: 10px 0; border-right: 0 !important; }
+  .facts div:not(:last-child) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 520px) {
+  .row2 { grid-template-columns: 1fr; }
+  table { min-width: 0; font-size: 12.5px; table-layout: fixed; }
+  thead th:first-child { width: 42%; }
+  th, td { padding: 9px 6px; white-space: normal; }
+  th[scope="row"] { min-width: 0; word-break: break-word; }
+  .sum { grid-template-columns: 110px minmax(0,1fr); }
+  .clock div { min-width: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">KOSTUM ROOM<small>Size+</small></a>
+    <nav class="nav" aria-label="Розділи">
+      <a href="#opys">Опис</a>
+      <a href="#rozmiry">Розміри</a>
+      <a href="#vidhuky">Відгуки</a>
+      <a href="#yak">Як замовити</a>
+    </nav>
+    <a class="btn sm" href="#order">Замовити</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div class="gallery" aria-label="Фото костюма">
+        <div class="thumbs" id="thumbs"></div>
+        <div class="stage">
+          <img id="main" src="img/red-1.jpg" width="800" height="1200" alt="Флісовий костюм, червоний">
+          <button class="arrow prev" id="prev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="arrow next" id="next" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          <span class="stage-tag" id="stageTag">Червоний</span>
+        </div>
+      </div>
+
+      <div class="buy">
+        <div style="display:grid;gap:10px">
+          <p class="eyebrow">Арт. 951 · розміри 50–60</p>
+          <h1 id="h1">Теплий флісовий костюм «Теплий Затишок»</h1>
+          <p class="lead">Якісний турецький фліс. Худі на блискавці та штани на широкій м'якій резинці.</p>
+        </div>
+
+        <div class="price-row">
+          <span class="price" id="price">1399<small>грн</small></span>
+          <span class="old">1599 грн</span>
+          <span class="save">−200 грн</span>
+        </div>
+
+        <div class="timer" aria-live="off">
+          <span class="lbl">Ціна зі знижкою діє ще</span>
+          <div class="clock" role="timer" aria-label="Час до кінця знижки">
+            <div><b id="tH">00</b><span>год</span></div>
+            <div><b id="tM">00</b><span>хв</span></div>
+            <div><b id="tS">00</b><span>сек</span></div>
+          </div>
+        </div>
+
+        <div role="radiogroup" aria-labelledby="lblColor">
+          <div class="field-label"><span id="lblColor">Колір</span><em id="colorName">Червоний</em></div>
+          <div class="swatches" id="swatches"></div>
+        </div>
+
+        <div role="radiogroup" aria-labelledby="lblSize">
+          <div class="field-label"><span id="lblSize">Розмір</span><em><a href="#rozmiry">таблиця розмірів</a></em></div>
+          <div class="chips" id="chips"></div>
+        </div>
+
+        <a class="btn" id="heroCta" href="#order">Замовити зі знижкою</a>
+
+        <div class="facts">
+          <div><b><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>Нова Пошта</b>доставка по Україні</div>
+          <div><b><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Після огляду</b>оплата при отриманні</div>
+          <div><b><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Дзвінок менеджера</b>підтвердить замовлення</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="opys" aria-labelledby="hOpys">
+    <div class="wrap fit reveal">
+      <div class="fit-photo"><img src="img/black-1.jpg" width="800" height="1200" loading="lazy" alt="Жінка в чорному флісовому костюмі з капюшоном"></div>
+      <div>
+        <div class="sec-head">
+          <p class="eyebrow">Опис костюма</p>
+          <h2 id="hOpys">Створений для жінок, які цінують справжній комфорт</h2>
+          <p>Затишний теплий костюм із полар-флісу: тепло, зручність і вільна посадка на весь день.</p>
+        </div>
+        <ul class="points">
+          <li><h3>Не тисне в талії та животику</h3><p>Штани на широкій, дуже м'якій еластичній резинці. Нічого не врізається в тіло та не сковує рухів упродовж усього дня.</p></li>
+          <li><h3>Прикриває поперек та приховує нюанси фігури</h3><p>Кофта правильної подовженої посадки надійно захищає спину від протягів, а вільний крій м'яко лягає по фігурі та делікатно маскує зону живота і стегон.</p></li>
+          <li><h3>Зручна блискавка не псує зачіску</h3><p>Худі легко одягати та знімати без потреби тягнути через голову. Теплий капюшон надійно захистить шию і голову від осіннього вітру.</p></li>
+          <li><h3>Регулювання посадки</h3><p>Низ кофти регулюється затяжками з фіксаторами. Можна зробити її повністю прямою або підібрати під свій силует.</p></li>
+          <li><h3>Тканина, яка зігріває, але не важка і не парить</h3><p>Преміальний полар-фліс надзвичайно легкий, не тисне на плечі й не колючий до тіла. Шкіра дихає, а відчуття затишного домашнього тепла лишається.</p></li>
+          <li><h3>Не кошлатиться та не потребує прасування</h3><p>Тканина практична в догляді. Після прання залишається такою ж охайною, м'якою та яскравою.</p></li>
+        </ul>
+        <p class="closing">Ваш улюблений наряд для прогулянок, поїздок до рідних та затишних осінніх днів.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="rozmiry" aria-labelledby="hSize" style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow">Арт. 951 · розміри 50–60</p>
+        <h2 id="hSize">Таблиця розмірів</h2>
+      </div>
+      <div class="tablebox" tabindex="0" role="region" aria-label="Таблиця розмірів, прокручується вбік">
+        <table id="sizeTable">
+          <thead><tr><th scope="col">Параметри виробу</th><th scope="col" data-size="50-52">50–52</th><th scope="col" data-size="54-56">54–56</th><th scope="col" data-size="58-60">58–60</th></tr></thead>
+          <tbody>
+            <tr class="group"><th colspan="4" scope="colgroup">Верх (кофта)</th></tr>
+            <tr><th scope="row">Обхват грудей (ОГ)</th><td data-size="50-52">128 см</td><td data-size="54-56">134 см</td><td data-size="58-60">142 см</td></tr>
+            <tr><th scope="row">Обхват по низу кофти (ОС)</th><td data-size="50-52">118 см</td><td data-size="54-56">126 см</td><td data-size="58-60">134 см</td></tr>
+            <tr><th scope="row">Рукав від горловини</th><td data-size="50-52">79 см</td><td data-size="54-56">79 см</td><td data-size="58-60">79 см</td></tr>
+            <tr><th scope="row">Довжина кофти по спинці</th><td data-size="50-52">70 см</td><td data-size="54-56">72 см</td><td data-size="58-60">73 см</td></tr>
+            <tr class="group"><th colspan="4" scope="colgroup">Низ (штани)</th></tr>
+            <tr><th scope="row">Талія (еластична резинка)</th><td data-size="50-52">80–120 см</td><td data-size="54-56">86–126 см</td><td data-size="58-60">92–132 см</td></tr>
+            <tr><th scope="row">Обхват стегон (ОС)</th><td data-size="50-52">126 см</td><td data-size="54-56">134 см</td><td data-size="58-60">142 см</td></tr>
+            <tr><th scope="row">Довжина штанів по боку</th><td data-size="50-52">103 см</td><td data-size="54-56">103 см</td><td data-size="58-60">103 см</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <p>Заміри зняті безпосередньо по виробу в сантиметрах.</p>
+        <p>Модель вільного прямого крою, ідеально для пишних форм. М'який, теплий преміум полар-фліс, приємний до тіла.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="vidhuky" aria-labelledby="hRev" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Листування з покупницями</p>
+        <h2 id="hRev">Відгуки клієнтів</h2>
+      </div>
+      <div class="chats reveal">
+        <figure><img src="img/review-1.jpg" width="920" height="415" loading="lazy" alt="Відгук: костюм отримала, якість просто вогонь, розмір підійшов ідеально"></figure>
+        <figure><img src="img/review-2.jpg" width="803" height="587" loading="lazy" alt="Відгук: костюм не продувається, дуже теплий і затишний, подруга вже запитала контакти"></figure>
+        <figure><img src="img/review-3.jpg" width="920" height="551" loading="lazy" alt="Відгук: вчора замовили, а сьогодні вже забрала на пошті, костюм розкішний"></figure>
+        <figure><img src="img/review-4.jpg" width="1280" height="493" loading="lazy" alt="Відгук: костюм забрала, все підійшло, те що я хотіла"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="yak" aria-labelledby="hHow" style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow">Чотири кроки</p>
+        <h2 id="hHow">Як зробити замовлення?</h2>
+      </div>
+      <ol class="steps">
+        <li><p>Залиште заявку на сайті</p></li>
+        <li><p>Менеджер зателефонує для підтвердження замовлення</p></li>
+        <li><p>Доставка товару Новою Поштою</p></li>
+        <li><p>Оплачуєте після огляду товару</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="order sec" id="order" aria-labelledby="hOrder">
+    <div class="wrap order-grid reveal">
+      <div class="sum" aria-label="Ваше замовлення">
+        <img id="sumImg" src="img/red-1.jpg" width="800" height="1200" loading="lazy" alt="">
+        <div>
+          <h3>Теплий флісовий костюм «Теплий Затишок»</h3>
+          <dl>
+            <div><dt>Колір</dt><dd id="sumColor">Червоний</dd></div>
+            <div><dt>Розмір</dt><dd id="sumSize">оберіть</dd></div>
+          </dl>
+          <p class="total">1399 грн</p>
+          <p class="eyebrow" style="margin-top:6px"><s>1599 грн</s></p>
+        </div>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <h2 id="hOrder">Для замовлення залиште свої дані</h2>
+        <p class="sub">Менеджер зателефонує та відповість на всі питання.</p>
+        <div class="row2">
+          <div class="fld"><label for="fColor">Колір</label><select id="fColor" name="color" required></select></div>
+          <div class="fld"><label for="fSize">Розмір</label><select id="fSize" name="size" required aria-describedby="eSize"></select><span class="err" id="eSize"></span></div>
+        </div>
+        <div class="fld"><label for="fName">Ваше ім'я</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="Вкажіть ім'я" required aria-describedby="eName"><span class="err" id="eName"></span></div>
+        <div class="fld"><label for="fPhone">Номер телефону</label><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required aria-describedby="ePhone"><span class="err" id="ePhone"></span></div>
+        <button class="btn" type="submit" id="submit">Замовити</button>
+        <div class="status" id="status" role="status" hidden></div>
+        <div class="trust"><span>Доставка Новою Поштою</span><span>Оплата після огляду</span></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <h2>Слідкуйте за нами</h2>
+    <div class="social">
+      <a href="#" id="linkFb" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+      <a href="#" id="linkIg" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a>
+    </div>
+    <p class="legal">KOSTUM ROOM · Size+ · Флісовий костюм «Теплий Затишок», арт. 951</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky">
+  <div class="p"><s>1599 грн</s>1399 грн</div>
+  <a class="btn" href="#order">Замовити</a>
+</div>
+
+<script>
+const CONFIG = {
+  ORDER_ENDPOINT: "",
+  PROMO_END: "",
+  PRICE: 1399, OLD_PRICE: 1599
+};
+const COLORS = [
+  { id: "red",       name: "Червоний", hex: "#b3112a" },
+  { id: "navy",      name: "Синій",    hex: "#1f2c63" },
+  { id: "graphite",  name: "Графіт",   hex: "#4a4a4e" },
+  { id: "chocolate", name: "Шоколад",  hex: "#512a1f" },
+  { id: "black",     name: "Чорний",   hex: "#171717" }
+];
+const SIZES = ["50-52", "54-56", "58-60"];
+const $ = (id) => document.getElementById(id);
+const state = { color: 0, photo: 0, size: "" };
+const sizeLabel = (s) => s.replace("-", "–");
+
+function renderGallery() {
+  const c = COLORS[state.color];
+  const img = $("main");
+  img.classList.add("fade");
+  setTimeout(() => {
+    img.src = "img/" + c.id + "-" + (state.photo + 1) + ".jpg";
+    img.alt = "Флісовий костюм, " + c.name.toLowerCase() + ", фото " + (state.photo + 1) + " з 3";
+    img.classList.remove("fade");
+  }, 200);
+  $("stageTag").textContent = c.name;
+  $("thumbs").innerHTML = [0, 1, 2].map(function(i) {
+    return '<button class="thumb" type="button" data-i="' + i + '" aria-label="Фото ' + (i + 1) + '" aria-current="' + (i === state.photo) + '"><img src="img/' + c.id + '-' + (i + 1) + '-t.jpg" width="160" height="240" alt=""></button>';
+  }).join("");
+  document.documentElement.style.setProperty("--sel", c.hex);
+}
+$("thumbs").addEventListener("click", function(e) {
+  var b = e.target.closest(".thumb"); if (!b) return;
+  state.photo = +b.dataset.i; renderGallery();
+});
+var step = function(d) { state.photo = (state.photo + d + 3) % 3; renderGallery(); };
+$("prev").onclick = function() { step(-1); };
+$("next").onclick = function() { step(1); };
+
+$("swatches").innerHTML = COLORS.map(function(c, i) {
+  return '<label class="sw" title="' + c.name + '"><input type="radio" name="sw" value="' + i + '" aria-label="' + c.name + '"' + (i === 0 ? " checked" : "") + '><span style="--c:' + c.hex + '"></span></label>';
+}).join("");
+$("chips").innerHTML = SIZES.map(function(s) {
+  return '<label class="chip"><input type="radio" name="sz" value="' + s + '"><span>' + sizeLabel(s) + '</span></label>';
+}).join("");
+$("fColor").innerHTML = COLORS.map(function(c, i) { return '<option value="' + i + '">' + c.name + '</option>'; }).join("");
+$("fSize").innerHTML = '<option value="">Оберіть розмір</option>' + SIZES.map(function(s) { return '<option value="' + s + '">' + sizeLabel(s) + '</option>'; }).join("");
+
+function syncAll() {
+  var c = COLORS[state.color];
+  $("colorName").textContent = c.name;
+  document.querySelectorAll('input[name="sw"]').forEach(function(r) { r.checked = +r.value === state.color; });
+  document.querySelectorAll('input[name="sz"]').forEach(function(r) { r.checked = r.value === state.size; });
+  $("fColor").value = String(state.color);
+  $("fSize").value = state.size;
+  $("sumColor").textContent = c.name;
+  $("sumSize").textContent = state.size ? sizeLabel(state.size) : "оберіть";
+  $("sumImg").src = "img/" + c.id + "-1.jpg";
+  document.querySelectorAll("#sizeTable [data-size]").forEach(function(el) { el.classList.toggle("is-sel", el.dataset.size === state.size); });
+}
+function setColor(i) { state.color = i; state.photo = 0; renderGallery(); syncAll(); }
+function setSize(s) { state.size = s; if (s) { $("fSize").removeAttribute("aria-invalid"); $("eSize").textContent = ""; } syncAll(); }
+$("swatches").addEventListener("change", function(e) { setColor(+e.target.value); });
+$("chips").addEventListener("change", function(e) { setSize(e.target.value); });
+$("fColor").addEventListener("change", function(e) { setColor(+e.target.value); });
+$("fSize").addEventListener("change", function(e) { setSize(e.target.value); });
+
+function promoEnd() {
+  var t = CONFIG.PROMO_END ? Date.parse(CONFIG.PROMO_END) : NaN;
+  if (!isNaN(t)) return t;
+  var d = new Date(); d.setHours(23, 59, 59, 999); return d.getTime();
+}
+var pad = function(n) { return String(n).padStart(2, "0"); };
+function tick() {
+  var left = Math.max(0, Math.floor((promoEnd() - Date.now()) / 1000));
+  $("tH").textContent = pad(Math.floor(left / 3600));
+  $("tM").textContent = pad(Math.floor((left % 3600) / 60));
+  $("tS").textContent = pad(left % 60);
+}
+tick(); setInterval(tick, 1000);
+
+function fieldError(input, errEl, msg) {
+  errEl.textContent = msg;
+  if (msg) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
+}
+$("fName").addEventListener("input", function() { fieldError($("fName"), $("eName"), ""); });
+$("fPhone").addEventListener("input", function() { fieldError($("fPhone"), $("ePhone"), ""); });
+function showStatus(kind, text) {
+  var s = $("status"); s.hidden = false; s.className = "status " + kind; s.textContent = text;
+}
+$("form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  var name = $("fName").value.trim();
+  var digits = $("fPhone").value.replace(/\D/g, "");
+  var bad = null;
+  if (!state.size) { fieldError($("fSize"), $("eSize"), "Оберіть розмір"); bad = bad || $("fSize"); }
+  if (name.length < 2) { fieldError($("fName"), $("eName"), "Вкажіть ім'я"); bad = bad || $("fName"); }
+  if (digits.length < 10 || digits.length > 13) { fieldError($("fPhone"), $("ePhone"), "Вкажіть номер у форматі +380 XX XXX XX XX"); bad = bad || $("fPhone"); }
+  if (bad) { bad.focus(); return; }
+  var order = {
+    product: "Теплий флісовий костюм «Теплий Затишок», арт. 951",
+    color: COLORS[state.color].name, size: sizeLabel(state.size), price: CONFIG.PRICE,
+    name: name, phone: $("fPhone").value.trim(), createdAt: new Date().toISOString()
+  };
+  if (!CONFIG.ORDER_ENDPOINT) {
+    showStatus("warn", "Це попередній перегляд: форма ще не підключена до прийому заявок, тому замовлення нікуди не надіслано.");
+    return;
+  }
+  var btn = $("submit"); btn.disabled = true;
+  try {
+    var r = await fetch(CONFIG.ORDER_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(order) });
+    if (!r.ok) throw new Error(r.status);
+    showStatus("ok", "Дякуємо! Заявку отримано. Менеджер зателефонує вам для підтвердження замовлення.");
+    $("form").reset(); setSize(""); setColor(state.color);
+  } catch (err) {
+    showStatus("warn", "Не вдалося надіслати заявку. Спробуйте ще раз за хвилину.");
+  } finally { btn.disabled = false; }
+});
+
+if ("IntersectionObserver" in window) {
+  var vis = { hero: true, order: false };
+  var upd = function() { $("sticky").classList.toggle("show", !vis.hero && !vis.order); };
+  new IntersectionObserver(function(en) { vis.hero = en[0].isIntersecting; upd(); }).observe($("heroCta"));
+  new IntersectionObserver(function(en) { vis.order = en[0].isIntersecting; upd(); }, { threshold: 0.15 }).observe($("order"));
+}
+
+var revealEls = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  var revObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add("visible"); revObs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  revealEls.forEach(function(el) { revObs.observe(el); });
+} else {
+  revealEls.forEach(function(el) { el.classList.add("visible"); });
+}
+
+renderGallery(); syncAll();
+</script>
+</body>
+</html>

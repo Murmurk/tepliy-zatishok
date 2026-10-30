@@ -1,0 +1,21 @@
+# Telegram export
+messages.html
+css/
+js/
+images/
+photos/
+
+# Old copy
+shop/
+
+# Screenshots
+*.png
+
+# IDE / tools
+.claude/
+.playwright-mcp/
+.git_old/
+
+# OS
+Thumbs.db
+.DS_Store
