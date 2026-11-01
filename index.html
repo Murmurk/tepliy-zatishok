@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Теплий Затишок — Флісовий костюм</title>
 <meta name="description" content="Теплий флісовий костюм «Теплий Затишок» — якісний турецький фліс, розміри 50–60. Доставка Новою Поштою, оплата після огляду.">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4383561501895798');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4383561501895798&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
@@ -466,25 +483,6 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 12px; object-fit: contain; cursor: default; }
 
-/* ── autocomplete ── */
-.ac-wrap { position: relative; }
-.ac-list {
-  display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 20;
-  max-height: 220px; overflow-y: auto; margin-top: 2px;
-  background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px;
-  box-shadow: var(--shadow-md); list-style: none; padding: 4px; -webkit-overflow-scrolling: touch;
-}
-.ac-list.open { display: block; }
-.ac-list li {
-  padding: 10px 14px; border-radius: 8px; font-size: 14px; cursor: pointer;
-  line-height: 1.35; transition: background .12s;
-}
-.ac-list li:hover, .ac-list li.active { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
-.ac-list .ac-empty { color: var(--muted); cursor: default; font-style: italic; }
-.ac-list .ac-empty:hover { background: transparent; }
-.ac-spin { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin .6s linear infinite; display: none; }
-.ac-spin.on { display: block; }
-@keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
 
 /* ── responsive ── */
 @media (max-width: 900px) {
@@ -618,15 +616,12 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
             <div class="fld"><label for="fiColor">Колір</label><select id="fiColor" name="color" required></select></div>
             <div class="fld"><label for="fiSize">Розмір</label><select id="fiSize" name="size" required aria-describedby="eiSize"></select><span class="err" id="eiSize"></span></div>
           </div>
-          <div class="fld"><label for="fiName">Ваше ім'я</label><input id="fiName" name="name" type="text" autocomplete="name" placeholder="Вкажіть ім'я" required aria-describedby="eiName"><span class="err" id="eiName"></span></div>
+          <div class="fld"><label for="fiName">Ваше ім'я</label><input id="fiName" name="name" type="text" autocomplete="name" placeholder="Ваше ім'я" required aria-describedby="eiName"><span class="err" id="eiName"></span></div>
           <div class="fld"><label for="fiPhone">Номер телефону</label><input id="fiPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required aria-describedby="eiPhone"><span class="err" id="eiPhone"></span></div>
-          <div class="fld ac-wrap"><label for="fiCity">Місто</label><input id="fiCity" name="city" type="text" autocomplete="off" placeholder="Почніть вводити місто" required aria-describedby="eiCity"><span class="ac-spin" id="fiCitySpin"></span><ul class="ac-list" id="fiCityList"></ul><span class="err" id="eiCity"></span></div>
-          <div class="fld ac-wrap"><label for="fiWh">Відділення Нової Пошти</label><input id="fiWh" name="warehouse" type="text" autocomplete="off" placeholder="Оберіть місто, потім відділення" required aria-describedby="eiWh" disabled><span class="ac-spin" id="fiWhSpin"></span><ul class="ac-list" id="fiWhList"></ul><span class="err" id="eiWh"></span></div>
-          <label class="check-row"><input type="checkbox" id="fiNoCall" name="noCall"><span>Замовити без дзвінка менеджера</span></label>
           <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-          <button class="btn" type="submit">Замовити</button>
+          <button class="btn" type="submit">Оформити замовлення — 1 399 грн</button>
           <div class="status" id="statusInline" role="status" hidden></div>
-          <div class="trust"><span>Доставка Новою Поштою</span><span>Оплата після огляду</span></div>
+          <div class="trust"><span>Оплата при отриманні на Новій Пошті</span><span>Без передоплати</span><span>Обмін/повернення 14 днів</span></div>
         </form>
       </div>
     </div>
@@ -660,15 +655,12 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
         <div class="fld"><label for="fmColor">Колір</label><select id="fmColor" name="color" required></select></div>
         <div class="fld"><label for="fmSize">Розмір</label><select id="fmSize" name="size" required aria-describedby="emSize"></select><span class="err" id="emSize"></span></div>
       </div>
-      <div class="fld"><label for="fmName">Ваше ім'я</label><input id="fmName" name="name" type="text" autocomplete="name" placeholder="Вкажіть ім'я" required aria-describedby="emName"><span class="err" id="emName"></span></div>
+      <div class="fld"><label for="fmName">Ваше ім'я</label><input id="fmName" name="name" type="text" autocomplete="name" placeholder="Ваше ім'я" required aria-describedby="emName"><span class="err" id="emName"></span></div>
       <div class="fld"><label for="fmPhone">Телефон</label><input id="fmPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required aria-describedby="emPhone"><span class="err" id="emPhone"></span></div>
-      <div class="fld ac-wrap"><label for="fmCity">Місто</label><input id="fmCity" name="city" type="text" autocomplete="off" placeholder="Почніть вводити місто" required aria-describedby="emCity"><span class="ac-spin" id="fmCitySpin"></span><ul class="ac-list" id="fmCityList"></ul><span class="err" id="emCity"></span></div>
-      <div class="fld ac-wrap"><label for="fmWh">Відділення НП</label><input id="fmWh" name="warehouse" type="text" autocomplete="off" placeholder="Оберіть місто, потім відділення" required aria-describedby="emWh" disabled><span class="ac-spin" id="fmWhSpin"></span><ul class="ac-list" id="fmWhList"></ul><span class="err" id="emWh"></span></div>
-      <label class="check-row"><input type="checkbox" id="fmNoCall" name="noCall"><span>Замовити без дзвінка менеджера</span></label>
       <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-      <button class="btn" type="submit">Замовити зі знижкою</button>
+      <button class="btn" type="submit">Оформити замовлення — 1 399 грн</button>
       <div class="status" id="statusModal" role="status" hidden></div>
-      <div class="trust"><span>Нова Пошта</span><span>Оплата після огляду</span></div>
+      <div class="trust"><span>Оплата при отриманні на Новій Пошті</span><span>Без передоплати</span><span>Обмін/повернення 14 днів</span></div>
     </form>
   </div>
 </div>
@@ -677,10 +669,10 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
 <div class="success-overlay" id="successOverlay">
   <div class="success-card">
     <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <h2>Замовлення прийнято!</h2>
-    <p>Дякуємо за ваше замовлення.</p>
+    <h2>Дякуємо! Ваше замовлення прийнято!</h2>
+    <p>Наш менеджер зателефонує вам протягом 15 хвилин для уточнення деталей та відправки.</p>
     <div class="success-details" id="successDetails"></div>
-    <p id="successMsg"></p>
+    <p id="successMsg" style="font-size:15px;color:var(--muted);line-height:1.6">Доставка Новою Поштою (1–2 дні). Оплата при отриманні (після огляду та примірки).</p>
     <button class="btn-close-success" id="successClose" type="button">Повернутися на сайт</button>
   </div>
 </div>
@@ -692,8 +684,7 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
 var CONFIG = {
   ORDER_URL: "https://script.google.com/macros/s/AKfycbzTarrgcx95_re7sK0S_xmgOQrbAud00oZkUKX4GlB0v9--xJ7nYkDNdGxQ7UuVLpJV/exec",
   PROMO_END: "",
-  PRICE: 1399, OLD_PRICE: 1799,
-  NP_API_KEY: "cb4f1e5831a989e630ff031ebaa32a06"
+  PRICE: 1399, OLD_PRICE: 1799
 };
 var COLORS = [
   { id: "red",       name: "Червоний",  hex: "#b3112a" },
@@ -869,155 +860,6 @@ document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" && lb.classList.contains("open")) { lb.classList.remove("open"); document.body.style.overflow = ""; }
 });
 
-/* ── Nova Poshta autocomplete ── */
-var NP_URL = "https://api.novaposhta.ua/v2.0/json/";
-
-function npCall(model, method, props) {
-  if (!CONFIG.NP_API_KEY) return Promise.resolve(null);
-  return fetch(NP_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ apiKey: CONFIG.NP_API_KEY, modelName: model, calledMethod: method, methodProperties: props })
-  }).then(function(r) { return r.json(); }).then(function(j) { return j.success ? j.data : null; }).catch(function() { return null; });
-}
-
-function initNpAutocomplete(cityId, cityListId, citySpinId, whId, whListId, whSpinId) {
-  var cityInp = document.getElementById(cityId);
-  var cityList = document.getElementById(cityListId);
-  var citySpin = document.getElementById(citySpinId);
-  var whInp = document.getElementById(whId);
-  var whList = document.getElementById(whListId);
-  var whSpin = document.getElementById(whSpinId);
-  if (!cityInp || !whInp) return;
-
-  if (!CONFIG.NP_API_KEY) {
-    cityInp.placeholder = "Вкажіть місто";
-    whInp.placeholder = "Вкажіть відділення НП";
-    whInp.disabled = false;
-    return;
-  }
-
-  var cityRef = "";
-  var debounce = null;
-  var activeIdx = -1;
-
-  function showList(ul, items, onPick) {
-    if (!items || !items.length) {
-      ul.innerHTML = '<li class="ac-empty">Нічого не знайдено</li>';
-      ul.classList.add("open");
-      return;
-    }
-    ul.innerHTML = items.map(function(it, i) {
-      return '<li data-i="' + i + '">' + it.label + '</li>';
-    }).join("");
-    ul.classList.add("open");
-    activeIdx = -1;
-    ul.onclick = function(e) {
-      var li = e.target.closest("li[data-i]");
-      if (!li) return;
-      onPick(items[+li.dataset.i]);
-      ul.classList.remove("open");
-    };
-  }
-
-  function closeList(ul) { ul.classList.remove("open"); activeIdx = -1; }
-
-  function keyNav(e, ul, items, onPick) {
-    if (!ul.classList.contains("open") || !items.length) return;
-    var lis = ul.querySelectorAll("li[data-i]");
-    if (e.key === "ArrowDown") { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, lis.length - 1); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); }
-    else if (e.key === "Enter" && activeIdx >= 0) { e.preventDefault(); onPick(items[activeIdx]); closeList(ul); return; }
-    else if (e.key === "Escape") { closeList(ul); return; }
-    else return;
-    lis.forEach(function(l, i) { l.classList.toggle("active", i === activeIdx); });
-    if (lis[activeIdx]) lis[activeIdx].scrollIntoView({ block: "nearest" });
-  }
-
-  var cityItems = [];
-  cityInp.addEventListener("input", function() {
-    var q = cityInp.value.trim();
-    cityRef = "";
-    whInp.value = "";
-    whInp.disabled = true;
-    closeList(whList);
-    if (q.length < 2) { closeList(cityList); return; }
-    clearTimeout(debounce);
-    citySpin.classList.add("on");
-    debounce = setTimeout(function() {
-      npCall("Address", "searchSettlements", { CityName: q, Limit: "15", Page: "1" }).then(function(data) {
-        citySpin.classList.remove("on");
-        if (!data || !data[0] || !data[0].Addresses) { cityItems = []; showList(cityList, [], null); return; }
-        cityItems = data[0].Addresses.map(function(a) {
-          return { label: a.Present, ref: a.DeliveryCity || a.Ref };
-        });
-        showList(cityList, cityItems, pickCity);
-      });
-    }, 300);
-  });
-
-  cityInp.addEventListener("keydown", function(e) { keyNav(e, cityList, cityItems, pickCity); });
-
-  function pickCity(item) {
-    cityInp.value = item.label;
-    cityRef = item.ref;
-    cityInp.removeAttribute("aria-invalid");
-    var errEl = cityInp.closest(".fld").querySelector(".err");
-    if (errEl) errEl.textContent = "";
-    whInp.disabled = false;
-    whInp.value = "";
-    whInp.placeholder = "Оберіть відділення або введіть номер";
-    whInp.focus();
-    loadWarehouses("");
-  }
-
-  var whItems = [];
-  var whDebounce = null;
-  var whLoading = false;
-  function loadWarehouses(search) {
-    if (!cityRef || whLoading) return;
-    whLoading = true;
-    whSpin.classList.add("on");
-    var props = { CityRef: cityRef, Page: "1", Limit: "150", Language: "UA" };
-    if (search) props.FindByString = search;
-    npCall("Address", "getWarehouses", props).then(function(data) {
-      whLoading = false;
-      whSpin.classList.remove("on");
-      if (!data) { whItems = []; showList(whList, [], null); return; }
-      whItems = data.map(function(w) {
-        return { label: w.Description, ref: w.Ref, num: w.Number };
-      });
-      showList(whList, whItems, pickWh);
-    });
-  }
-
-  whInp.addEventListener("input", function() {
-    var q = whInp.value.trim();
-    clearTimeout(whDebounce);
-    if (!cityRef) return;
-    whDebounce = setTimeout(function() { loadWarehouses(q); }, 300);
-  });
-  whInp.addEventListener("focus", function() {
-    if (cityRef && !whLoading && whItems.length === 0) loadWarehouses(whInp.value.trim());
-    else if (cityRef && whItems.length > 0 && !whList.classList.contains("open")) showList(whList, whItems, pickWh);
-  });
-  whInp.addEventListener("keydown", function(e) { keyNav(e, whList, whItems, pickWh); });
-
-  function pickWh(item) {
-    whInp.value = item.label;
-    whInp.removeAttribute("aria-invalid");
-    var errEl = whInp.closest(".fld").querySelector(".err");
-    if (errEl) errEl.textContent = "";
-  }
-
-  document.addEventListener("click", function(e) {
-    if (!cityInp.contains(e.target) && !cityList.contains(e.target)) closeList(cityList);
-    if (!whInp.contains(e.target) && !whList.contains(e.target)) closeList(whList);
-  });
-}
-
-initNpAutocomplete("fiCity", "fiCityList", "fiCitySpin", "fiWh", "fiWhList", "fiWhSpin");
-initNpAutocomplete("fmCity", "fmCityList", "fmCitySpin", "fmWh", "fmWhList", "fmWhSpin");
 
 /* ── form submission ── */
 var lastOrderTime = 0;
@@ -1045,21 +887,13 @@ function handleSubmit(form, statusId, prefix) {
       if (msg) inp.setAttribute("aria-invalid", "true"); else inp.removeAttribute("aria-invalid");
     }
 
-    var cityInp = form.querySelector('input[name="city"]');
-    var whInp = form.querySelector('input[name="warehouse"]');
-    var cityErr = form.querySelector('input[name="city"]') ? form.querySelector('input[name="city"]').closest(".fld").querySelector(".err") : null;
-    var whErr = form.querySelector('input[name="warehouse"]') ? form.querySelector('input[name="warehouse"]').closest(".fld").querySelector(".err") : null;
-
     var name = nameInp.value.trim();
     var digits = phoneInp.value.replace(/\D/g, "");
     fieldError(sizeSel, sizeErr, ""); fieldError(nameInp, nameErr, ""); fieldError(phoneInp, phoneErr, "");
-    if (cityInp) fieldError(cityInp, cityErr, ""); if (whInp) fieldError(whInp, whErr, "");
     var bad = null;
     if (!sizeSel.value) { fieldError(sizeSel, sizeErr, "Оберіть розмір"); bad = bad || sizeSel; }
     if (name.length < 2) { fieldError(nameInp, nameErr, "Вкажіть ім'я"); bad = bad || nameInp; }
     if (digits.length !== 12 || digits.slice(0,3) !== "380") { fieldError(phoneInp, phoneErr, "Вкажіть номер +380 XX XXX XX XX"); bad = bad || phoneInp; }
-    if (cityInp && cityInp.value.trim().length < 2) { fieldError(cityInp, cityErr, "Вкажіть місто"); bad = bad || cityInp; }
-    if (whInp && !whInp.disabled && whInp.value.trim().length < 2) { fieldError(whInp, whErr, "Вкажіть відділення"); bad = bad || whInp; }
     if (bad) { bad.scrollIntoView({ behavior: "smooth", block: "center" }); bad.focus(); return; }
 
     var statusEl = document.getElementById(statusId);
@@ -1072,9 +906,6 @@ function handleSubmit(form, statusId, prefix) {
       price: CONFIG.PRICE,
       name: name,
       phone: phoneInp.value.trim(),
-      city: cityInp ? cityInp.value.trim() : "",
-      warehouse: whInp ? whInp.value.trim() : "",
-      noCall: !!(form.querySelector('input[name="noCall"]') && form.querySelector('input[name="noCall"]').checked),
       createdAt: new Date().toISOString()
     };
 
@@ -1091,17 +922,19 @@ function handleSubmit(form, statusId, prefix) {
         mode: "no-cors"
       });
       lastOrderTime = Date.now();
+      if (typeof fbq === "function") {
+        fbq('track', 'Lead');
+        fbq('track', 'SubmitApplication');
+        fbq('track', 'Purchase', { value: CONFIG.PRICE, currency: 'UAH' });
+      }
       form.reset();
       statusEl.hidden = true;
       closeModal();
       var details = document.getElementById("successDetails");
       details.innerHTML = "<b>" + order.color + "</b> · " + order.size + "<br>"
-        + order.name + " · " + order.phone + "<br>"
-        + order.city + (order.warehouse ? "<br>" + order.warehouse : "");
+        + order.name + " · " + order.phone;
       var successMsg = document.getElementById("successMsg");
-      successMsg.textContent = order.noCall
-        ? "Замовлення відправлено Новою Поштою без дзвінка. Очікуйте SMS з номером накладної."
-        : "Менеджер зателефонує для підтвердження замовлення.";
+      successMsg.textContent = "Наш менеджер зателефонує вам протягом 15 хвилин для уточнення деталей та відправки.";
       var so = document.getElementById("successOverlay");
       so.classList.add("open");
       document.body.style.overflow = "hidden";
