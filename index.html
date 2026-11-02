@@ -502,9 +502,11 @@ footer { padding-block: 48px calc(48px + env(safe-area-inset-bottom, 0px)); }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+.reveal.no-js { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
+<script>setTimeout(function(){document.querySelectorAll(".reveal:not(.visible)").forEach(function(el){el.classList.add("visible")})},4000)</script>
 
 <header class="top">
   <div class="wrap-wide">
@@ -834,10 +836,6 @@ document.addEventListener("click", function(e) {
   if (card) {
     var checked = card.querySelector('input[type="radio"]:checked');
     if (checked) size = checked.value;
-    if (colorIdx == null) {
-      var colorId = card.querySelector(".size-chips").dataset.color;
-      COLORS.forEach(function(c, i) { if (c.id === colorId) colorIdx = i; });
-    }
   }
   openModal(colorIdx, size);
 });
@@ -867,7 +865,7 @@ function handleSubmit(form, statusId, prefix) {
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
     var hp = form.querySelector('input[name="website"]');
-    if (hp && hp.value) return;
+    if (hp) { if (hp.value) { hp.value = ""; } }
     var now = Date.now();
     if (now - lastOrderTime < 30000) {
       var statusEl = document.getElementById(statusId);
@@ -925,7 +923,7 @@ function handleSubmit(form, statusId, prefix) {
       if (typeof fbq === "function") {
         fbq('track', 'Lead');
         fbq('track', 'SubmitApplication');
-        fbq('track', 'Purchase', { value: CONFIG.PRICE, currency: 'UAH' });
+        fbq('track', 'Purchase', { value: parseFloat(CONFIG.PRICE), currency: 'UAH' });
       }
       form.reset();
       statusEl.hidden = true;
@@ -950,21 +948,21 @@ handleSubmit(document.getElementById("formModal"), "statusModal", "em");
 
 ["fiName","fiPhone","fiSize"].forEach(function(id) {
   var el = document.getElementById(id);
-  if (el) el.addEventListener("input", function() {
+  if (el) ["input","change"].forEach(function(evt) { el.addEventListener(evt, function() {
     var errId = "e" + id.slice(1);
     var errEl = document.getElementById(errId);
     if (errEl) errEl.textContent = "";
     el.removeAttribute("aria-invalid");
-  });
+  }); });
 });
 ["fmName","fmPhone","fmSize"].forEach(function(id) {
   var el = document.getElementById(id);
-  if (el) el.addEventListener("input", function() {
+  if (el) ["input","change"].forEach(function(evt) { el.addEventListener(evt, function() {
     var errId = "e" + id.slice(1);
     var errEl = document.getElementById(errId);
     if (errEl) errEl.textContent = "";
     el.removeAttribute("aria-invalid");
-  });
+  }); });
 });
 
 /* ── phone mask ── */
@@ -974,7 +972,7 @@ handleSubmit(document.getElementById("formModal"), "statusModal", "em");
   inp.addEventListener("focus", function() {
     if (!inp.value) inp.value = "+380 ";
   });
-  inp.addEventListener("input", function() {
+  function formatPhone() {
     var raw = inp.value.replace(/\D/g, "");
     if (raw.length < 3) raw = "380";
     if (raw.slice(0,3) !== "380") raw = "380" + raw;
@@ -986,7 +984,9 @@ handleSubmit(document.getElementById("formModal"), "statusModal", "em");
     if (p.length > 5) f += " " + p.slice(5,7);
     if (p.length > 7) f += " " + p.slice(7,9);
     inp.value = f;
-  });
+  }
+  inp.addEventListener("input", formatPhone);
+  inp.addEventListener("change", formatPhone);
   inp.addEventListener("keydown", function(e) {
     var sel = inp.selectionStart;
     if ((e.key === "Backspace" || e.key === "Delete") && sel <= 5 && inp.selectionEnd <= 5) {
